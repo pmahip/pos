@@ -1,0 +1,50 @@
+
+<div class="main-content">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" data-background-color="green">
+                    <h4 class="title">Add Category</h4>
+                    <p class="category">Specify which Category</p>
+                </div>
+                <div class="card-content">
+                    <form (submit)="addCategory()">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Categoryname</label>
+                                    <input type="text" [(ngModel)]="categoryname" name="categoryname" class="form-control" required minlength="2" maxlength="50" >
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success pull-right">Submit Category</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">     
+            <div class="card">
+                <div class="card-header" data-background-color="green">
+                    <h4 class="title">Category List</h4>
+                    <p class="category">Your Category</p>
+                </div>
+                <div class="card-content">
+                    <div *ngFor="let category of categories">
+                        <div class ="col-md-8">
+                          {{category.categoryname}}
+                        </div>
+                        <div class ="col-md-2">
+                          <button class="btn btn-danger btn-xs" (click)="deleteCategory(category._id)">delete</button>
+                        </div>
+                        <div class ="col-md-2">
+                          <button class="btn btn-warning btn-xs" (click)="updateCategory(category._id)">update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

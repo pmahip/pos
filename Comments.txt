@@ -1,0 +1,2 @@
+git remote add origin https://maheshpk@bitbucket.org/lightmagic123/photography.git
+git push -u origin master
